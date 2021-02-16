@@ -14,11 +14,9 @@ export function GridToolbar() {
   const options = useGridSelector(apiRef, optionsSelector);
 
   if (
-    !options.showToolbar ||
-    (options.disableColumnFilter &&
-      options.disableColumnSelector &&
-      options.disableDensitySelector &&
-      options.disableCsvExport)
+    options.disableColumnFilter &&
+    options.disableColumnSelector &&
+    options.disableDensitySelector
   ) {
     return null;
   }
